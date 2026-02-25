@@ -1,0 +1,50 @@
+services:
+  api:
+    build: .
+    container_name: lifelight-memory-lab-api
+    env_file:
+      - .env
+    ports:
+      - "8000:8000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_started
+      qdrant:
+        condition: service_started
+
+  postgres:
+    image: postgres:16
+    container_name: lifelight-memory-lab-postgres
+    environment:
+      POSTGRES_USER: lifelight
+      POSTGRES_PASSWORD: lifelight
+      POSTGRES_DB: lifelight
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U lifelight -d lifelight"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+    ports:
+      - "5432:5432"
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+
+  redis:
+    image: redis:7-alpine
+    container_name: lifelight-memory-lab-redis
+    ports:
+      - "6379:6379"
+
+  qdrant:
+    image: qdrant/qdrant:latest
+    container_name: lifelight-memory-lab-qdrant
+    ports:
+      - "6333:6333"
+    volumes:
+      - qdrant_data:/qdrant/storage
+
+volumes:
+  postgres_data:
+  qdrant_data:
