@@ -1,4 +1,4 @@
-# LifelightMemory Lab（公开抽象版）
+# LifelightMemory Lab（心光 App 4.0 Memory 能力公开抽象版）
 
 [![Backend CI](https://github.com/xiaosen3333/LifelightMemory-Lab/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/xiaosen3333/LifelightMemory-Lab/actions/workflows/backend-ci.yml)
 
@@ -6,6 +6,8 @@
 
 > 公司项目无法开源，这里是同栈的复刻/练手版本/抽象模块。  
 > 本仓库用于公开展示后端与运维工程能力，不包含任何公司敏感实现。
+
+本项目对应心光 App 4.0 的核心功能 Memory（记忆藤蔓），目标是让系统真正懂用户：从用户日记和对话中提取记忆事实，进行阶段性总结，并生成可视化记忆藤蔓与记忆洞察报告，让用户直观感知自己的变化。
 
 ## 这个仓库的目的
 
@@ -29,12 +31,23 @@
 - 支撑大规模数据与在线服务：`chat_session` 约 `190万+`、`chat_session_messages` 约 `600万+`、`user_profiles` 约 `44万+`、`user_profiles_facts` 约 `198万+`。
 - 工程侧具备稳定性设计：流式接口、异步后台任务、Redis 队列（去重/重试/可见性）、画像一致性校验与自动化清理机制。
 
-## 业务截图（待补充）
+## 业务截图（4张）
 
-你补图后按下面命名即可自动展示：
+### 1）记忆藤蔓主视图
 
-- 记忆藤蔓（4张）：`docs/showcase/memory-vine/1.png` ~ `docs/showcase/memory-vine/4.png`
-- 记忆报告（4张）：`docs/showcase/memory-report/1.png` ~ `docs/showcase/memory-report/4.png`
+![记忆藤蔓主视图](docs/showcase/screenshots/01-memory-vine-timeline.png)
+
+### 2）记忆主题可视化（主题选择）
+
+![记忆主题可视化](docs/showcase/screenshots/02-memory-theme-selector.png)
+
+### 3）阶段性记忆洞察卡片
+
+![阶段性记忆洞察卡片](docs/showcase/screenshots/03-memory-insight-card.png)
+
+### 4）记忆洞察报告（雷达图 + 心路历程）
+
+![记忆洞察报告](docs/showcase/screenshots/04-memory-insight-radar.png)
 
 ## 系统能力
 

@@ -1,4 +1,4 @@
-# LifelightMemory Lab (Public Abstraction)
+# LifelightMemory Lab (Public Abstraction of Lifelight App 4.0 Memory Core)
 
 [![Backend CI](https://github.com/xiaosen3333/LifelightMemory-Lab/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/xiaosen3333/LifelightMemory-Lab/actions/workflows/backend-ci.yml)
 
@@ -6,6 +6,8 @@
 
 > The company project is proprietary and cannot be open-sourced.  
 > This repository is a public-safe reconstruction of the same stack and engineering approach.
+
+This project represents the core Memory capability in Lifelight App 4.0: making the system truly understand users by extracting memory facts from diary entries and conversations, generating stage-based summaries, and presenting them through a visual Memory Vine plus insight reports.
 
 ## Why this repository exists
 
@@ -29,12 +31,23 @@ The following metrics summarize my work on the Memory capability in the 4.0 rele
 - Supported large-scale online workloads: `chat_session` ~ `1.9M+`, `chat_session_messages` ~ `6M+`, `user_profiles` ~ `440K+`, `user_profiles_facts` ~ `1.98M+`.
 - Reliability-focused engineering included streaming APIs, async background tasks, Redis queueing (dedupe/retry/visibility), profile consistency checks, and automated cleanup.
 
-## Product Screenshots (To Be Added)
+## Product Screenshots (4 Images)
 
-After you add images, use these filenames:
+### 1) Memory Vine Main View
 
-- Memory Vine (4 images): `docs/showcase/memory-vine/1.png` to `docs/showcase/memory-vine/4.png`
-- Memory Report (4 images): `docs/showcase/memory-report/1.png` to `docs/showcase/memory-report/4.png`
+![Memory Vine Main View](docs/showcase/screenshots/01-memory-vine-timeline.png)
+
+### 2) Memory Theme Visualization (Theme Selector)
+
+![Memory Theme Visualization](docs/showcase/screenshots/02-memory-theme-selector.png)
+
+### 3) Stage-Based Memory Insight Card
+
+![Stage-Based Memory Insight Card](docs/showcase/screenshots/03-memory-insight-card.png)
+
+### 4) Memory Insight Report (Radar + Journey)
+
+![Memory Insight Report](docs/showcase/screenshots/04-memory-insight-radar.png)
 
 ## System capabilities
 
