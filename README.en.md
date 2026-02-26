@@ -17,6 +17,25 @@ This repo is built to showcase my backend and DevOps capability in a public hiri
 - GitHub Actions quality gates (lint/test/build)
 - Deployable script with health-check validation
 
+## 4.0 Production Highlights (Public Metrics from Company Project)
+
+The following metrics summarize my work on the Memory capability in the 4.0 release of the company product:
+
+- Owned the core Memory capability (Memory Vine), and delivered the full chain: diary/session -> fact extraction -> profile generation -> user-feedback loop.
+- In launch week (2025-09-13 to 2025-09-19), Memory main-path penetration reached `88.56%` (`6044/6825`, deduplicated by `chat_session` users), becoming a core user path.
+- Designed the Memory Vine structure for fact visualization and designed the insight-report experience.
+- Under the Memory service metric, D7 active retention improved from `1.30%` to `2.01%` (`+0.71pp`); diary-based D7 improved from `0.77%` to `0.97%` (`+0.20pp`).
+- Based on `user_profiles` feedback data, the 4.0 memory report feature reached `90.84%` explicit positive rate (`23396/(23396+2358)`), then stabilized at `92%+` monthly.
+- Supported large-scale online workloads: `chat_session` ~ `1.9M+`, `chat_session_messages` ~ `6M+`, `user_profiles` ~ `440K+`, `user_profiles_facts` ~ `1.98M+`.
+- Reliability-focused engineering included streaming APIs, async background tasks, Redis queueing (dedupe/retry/visibility), profile consistency checks, and automated cleanup.
+
+## Product Screenshots (To Be Added)
+
+After you add images, use these filenames:
+
+- Memory Vine (4 images): `docs/showcase/memory-vine/1.png` to `docs/showcase/memory-vine/4.png`
+- Memory Report (4 images): `docs/showcase/memory-report/1.png` to `docs/showcase/memory-report/4.png`
+
 ## System capabilities
 
 - `POST /v1/memory/ingest`: store one user memory text
