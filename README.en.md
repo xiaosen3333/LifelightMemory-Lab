@@ -1,4 +1,4 @@
-# LifelightMemory Lab (Public Abstraction of Lifelight App 4.0 Memory Core)
+# LifelightMemory Lab (Public Abstraction of Lifelight App 4.0 Core Capability)
 
 [![Backend CI](https://github.com/xiaosen3333/LifelightMemory-Lab/actions/workflows/backend-ci.yml/badge.svg)](https://github.com/xiaosen3333/LifelightMemory-Lab/actions/workflows/backend-ci.yml)
 
@@ -9,7 +9,7 @@
 
 This project represents the core Memory capability in Lifelight App 4.0: making the system truly understand users by extracting memory facts from diary entries and conversations, generating stage-based summaries, and presenting them through a visual Memory Vine plus insight reports.
 
-## Why this repository exists
+## Project Positioning
 
 This repo is built to showcase my backend and DevOps capability in a public hiring context:
 
@@ -19,7 +19,7 @@ This repo is built to showcase my backend and DevOps capability in a public hiri
 - GitHub Actions quality gates (lint/test/build)
 - Deployable script with health-check validation
 
-## 4.0 Production Highlights (Public Metrics from Company Project)
+## Business Outcomes (Public Metrics)
 
 The following metrics summarize my work on the Memory capability in the 4.0 release of the company product:
 
@@ -31,7 +31,7 @@ The following metrics summarize my work on the Memory capability in the 4.0 rele
 - Supported large-scale online workloads: `chat_session` ~ `1.9M+`, `chat_session_messages` ~ `6M+`, `user_profiles` ~ `440K+`, `user_profiles_facts` ~ `1.98M+`.
 - Reliability-focused engineering included streaming APIs, async background tasks, Redis queueing (dedupe/retry/visibility), profile consistency checks, and automated cleanup.
 
-## Product Screenshots (4 Images)
+## Feature Showcase (4 Screenshots)
 
 ### 1) Memory Vine Main View
 
@@ -49,20 +49,20 @@ The following metrics summarize my work on the Memory capability in the 4.0 rele
 
 ![Memory Insight Report](docs/showcase/screenshots/04-memory-insight-radar.png)
 
-## System capabilities
+## Core API Capabilities
 
 - `POST /v1/memory/ingest`: store one user memory text
 - `POST /v1/memory/search`: semantic retrieval scoped by user with lexical fallback
 - `GET /v1/health`: dependency health for API, DB, Redis, and Qdrant
 
-## What I owned
+## Scope I Owned
 
 - Architecture: layering, data model, retrieval/fallback strategy
 - Implementation: FastAPI + SQLModel + Qdrant client
 - Engineering quality: Makefile, tests, lint, GitHub CI
 - DevOps: container orchestration, env management, deploy and health checks
 
-## Architecture
+## Technical Architecture
 
 ```mermaid
 flowchart LR
@@ -76,7 +76,7 @@ flowchart LR
     F --> E
 ```
 
-## Open-source boundary
+## Open-source Boundary
 
 The following elements exist in the company environment but are intentionally excluded here:
 
@@ -87,7 +87,7 @@ The following elements exist in the company environment but are intentionally ex
 
 This repository reproduces the engineering method and stack, not the production code.
 
-## Quick start
+## Run Locally
 
 ### 1) Local Python mode
 
@@ -125,7 +125,7 @@ curl -X POST 'http://127.0.0.1:8000/v1/memory/search' \
   -d '{"user_id":"u-1001","query":"system design","limit":5}'
 ```
 
-## Engineering and DevOps signals
+## Engineering and DevOps Practices
 
 - `Makefile`: one-command lint/test/run/up/down
 - `docker-compose.yml`: app + postgres + redis + qdrant
@@ -133,7 +133,7 @@ curl -X POST 'http://127.0.0.1:8000/v1/memory/search' \
 - `.github/workflows/backend-ci.yml`: lint + tests + docker build
 - `CONTRIBUTING.md`: commit convention + PR checklist
 
-## Project structure
+## Repository Structure
 
 ```text
 LifelightMemory-Lab/
@@ -152,7 +152,7 @@ LifelightMemory-Lab/
 └── README.md
 ```
 
-## Mapping to company-project experience
+## Capability Mapping (Company Project -> Public Abstraction)
 
 - Multi-router memory core: mapped to `api + services`
 - Vector retrieval with fallback: mapped to `vector_store + lexical fallback`
